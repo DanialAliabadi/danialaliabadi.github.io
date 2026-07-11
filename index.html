@@ -1,31 +1,276 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>دانیال علی آبادی | مربی شنا</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet">
+
 <style>
-body{
+
+*{
 margin:0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#001a33,#003366,#00aaff);
-font-family:tahoma;
+padding:0;
+box-sizing:border-box;
+font-family:'Vazirmatn',sans-serif;
+}
+
+body{
+background:#030712;
 color:white;
+overflow-x:hidden;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:50px;
+position:relative;
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+url('IMG_1586.jpeg');
+background-size:cover;
+background-position:center;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:600px;
+height:600px;
+background:#00aaff;
+filter:blur(180px);
+opacity:.25;
+border-radius:50%;
+right:-200px;
+top:-100px;
+}
+
+.content{
+max-width:1200px;
+width:100%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+z-index:2;
+}
+
+.hero-image img{
+width:100%;
+border-radius:30px;
+box-shadow:0 0 60px rgba(0,170,255,.4);
+transition:.4s;
+}
+
+.hero-image img:hover{
+transform:scale(1.03);
+}
+
+.hero-text h1{
+font-size:90px;
+font-weight:900;
+line-height:1;
+}
+
+.hero-text span{
+color:#00aaff;
+}
+
+.hero-text h2{
+margin-top:20px;
+font-size:35px;
+color:#ddd;
+}
+
+.hero-text p{
+margin-top:20px;
+line-height:2;
+color:#bbb;
+font-size:18px;
+}
+
+.btns{
+margin-top:30px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 30px;
+border-radius:15px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.blue{
+background:#00aaff;
+color:white;
+}
+
+.dark{
+border:1px solid #00aaff;
+color:#00aaff;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+.cards{
+padding:80px 20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:#0b1220;
+border:1px solid rgba(255,255,255,.08);
+border-radius:25px;
+padding:30px;
 text-align:center;
+transition:.4s;
 }
-h1{
-font-size:3rem;
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(0,170,255,.3);
 }
+
+.card h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.gallery{
+max-width:1200px;
+margin:auto;
+padding:50px 20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.gallery img{
+width:100%;
+height:400px;
+object-fit:cover;
+border-radius:25px;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.footer{
+text-align:center;
+padding:40px;
+color:#aaa;
+}
+
+@media(max-width:900px){
+
+.content{
+grid-template-columns:1fr;
+}
+
+.hero-text h1{
+font-size:55px;
+}
+
+}
+
 </style>
 </head>
 <body>
-<div>
-<h1>🏊 دانیال علی آبادی</h1>
-<p>مربی تخصصی شنا در ساری</p>
-<p>شماره تماس: 09395695680</p>
+
+<section class="hero">
+
+<div class="content">
+
+<div class="hero-text">
+
+<h1>دانیال <span>علی آبادی</span></h1>
+
+<h2>مربی تخصصی شنا در ساری</h2>
+
+<p>
+آموزش شنا از مبتدی تا قهرمانی،
+تمرینات تخصصی،
+آمادگی مسابقات،
+و برنامه‌های حرفه‌ای برای تمام سنین.
+</p>
+
+<div class="btns">
+
+<a class="btn blue" href="tel:09395695680">
+تماس مستقیم
+</a>
+
+<a class="btn dark"
+href="https://instagram.com/danial.aliabadii">
+اینستاگرام
+</a>
+
 </div>
+
+</div>
+
+<div class="hero-image">
+<img src="IMG_1586.jpeg">
+</div>
+
+</div>
+
+</section>
+
+<section class="cards">
+
+<div class="card">
+<h3>آموزش کودکان</h3>
+<p>شروع اصولی شنا برای تمام سنین</p>
+</div>
+
+<div class="card">
+<h3>آموزش بزرگسالان</h3>
+<p>از مبتدی تا پیشرفته</p>
+</div>
+
+<div class="card">
+<h3>آمادگی مسابقات</h3>
+<p>برنامه حرفه‌ای برای قهرمانی</p>
+</div>
+
+<div class="card">
+<h3>تمرین خصوصی</h3>
+<p>کوچینگ اختصاصی و تخصصی</p>
+</div>
+
+</section>
+
+<section class="gallery">
+
+<img src="IMG_1591.jpeg">
+<img src="IMG_1592.jpeg">
+<img src="IMG_1586.jpeg">
+
+</section>
+
+<div class="footer">
+
+دانیال علی آبادی © 2025
+
+</div>
+
 </body>
 </html>
