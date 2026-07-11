@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>دانیال علی آبادی | مربی شنا</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,178 +13,180 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Vazirmatn',sans-serif;
+font-family:Vazirmatn,sans-serif;
 }
 
 body{
-background:#030712;
+background:#061321;
 color:white;
 overflow-x:hidden;
 }
 
 .hero{
 min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:50px;
-position:relative;
 background:
-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
 url('IMG_1586.jpeg');
 background-size:cover;
 background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px;
 }
 
-.hero::before{
-content:'';
-position:absolute;
-width:600px;
-height:600px;
-background:#00aaff;
-filter:blur(180px);
-opacity:.25;
-border-radius:50%;
-right:-200px;
-top:-100px;
-}
-
-.content{
+.hero-content{
 max-width:1200px;
 width:100%;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
 align-items:center;
-z-index:2;
-}
-
-.hero-image img{
-width:100%;
-border-radius:30px;
-box-shadow:0 0 60px rgba(0,170,255,.4);
-transition:.4s;
-}
-
-.hero-image img:hover{
-transform:scale(1.03);
 }
 
 .hero-text h1{
-font-size:90px;
+font-size:75px;
 font-weight:900;
-line-height:1;
+line-height:1.1;
 }
 
-.hero-text span{
-color:#00aaff;
+.hero-text h1 span{
+color:#00bfff;
 }
 
 .hero-text h2{
 margin-top:20px;
-font-size:35px;
-color:#ddd;
+font-size:42px;
+font-weight:700;
 }
 
 .hero-text p{
-margin-top:20px;
+margin-top:25px;
+font-size:22px;
 line-height:2;
-color:#bbb;
-font-size:18px;
+color:#d6d6d6;
 }
 
 .btns{
-margin-top:30px;
+margin-top:35px;
 display:flex;
 gap:15px;
 flex-wrap:wrap;
 }
 
 .btn{
-padding:15px 30px;
-border-radius:15px;
+padding:15px 35px;
+border-radius:50px;
 text-decoration:none;
+font-size:20px;
 font-weight:700;
-transition:.3s;
 }
 
-.blue{
-background:#00aaff;
+.primary{
+background:#00bfff;
 color:white;
 }
 
-.dark{
-border:1px solid #00aaff;
-color:#00aaff;
+.secondary{
+border:2px solid #00bfff;
+color:#00bfff;
 }
 
-.btn:hover{
-transform:translateY(-5px);
+.hero-image{
+text-align:center;
 }
 
-.cards{
-padding:80px 20px;
+.hero-image img{
+width:100%;
+max-width:500px;
+border-radius:30px;
+box-shadow:0 0 50px rgba(0,191,255,.5);
+}
+
+.stats{
+padding:70px 20px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
 max-width:1200px;
 margin:auto;
 }
 
 .card{
-background:#0b1220;
+background:#081b2f;
 border:1px solid rgba(255,255,255,.08);
-border-radius:25px;
-padding:30px;
+padding:35px;
 text-align:center;
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 30px rgba(0,170,255,.3);
+border-radius:25px;
 }
 
 .card h3{
-font-size:24px;
-margin-bottom:10px;
+font-size:45px;
+color:#00bfff;
+}
+
+.card p{
+margin-top:10px;
+font-size:18px;
+}
+
+.section{
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
+}
+
+.title{
+text-align:center;
+font-size:50px;
+margin-bottom:50px;
 }
 
 .gallery{
-max-width:1200px;
-margin:auto;
-padding:50px 20px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
 .gallery img{
 width:100%;
-height:400px;
+border-radius:20px;
+height:350px;
 object-fit:cover;
-border-radius:25px;
-transition:.4s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
 }
 
 .footer{
+padding:60px 20px;
 text-align:center;
-padding:40px;
-color:#aaa;
+background:#03101d;
+}
+
+.phone{
+font-size:35px;
+font-weight:900;
+color:#00bfff;
 }
 
 @media(max-width:900px){
 
-.content{
+.hero-content{
 grid-template-columns:1fr;
 }
 
 .hero-text h1{
-font-size:55px;
+font-size:50px;
+}
+
+.hero-text h2{
+font-size:30px;
+}
+
+.stats{
+grid-template-columns:1fr 1fr;
+}
+
+.gallery{
+grid-template-columns:1fr;
 }
 
 }
@@ -196,29 +197,31 @@ font-size:55px;
 
 <section class="hero">
 
-<div class="content">
+<div class="hero-content">
 
 <div class="hero-text">
 
-<h1>دانیال <span>علی آبادی</span></h1>
+<h1>
+دانیال <span>علی آبادی</span>
+</h1>
 
-<h2>مربی تخصصی شنا در ساری</h2>
+<h2>
+مربی تخصصی شنا در ساری
+</h2>
 
 <p>
-آموزش شنا از مبتدی تا قهرمانی،
-تمرینات تخصصی،
-آمادگی مسابقات،
-و برنامه‌های حرفه‌ای برای تمام سنین.
+آموزش شنا از سطح مبتدی تا قهرمانی،
+تمرینات حرفه‌ای، آماده‌سازی مسابقات،
+و برنامه‌های اختصاصی برای تمامی سنین.
 </p>
 
 <div class="btns">
 
-<a class="btn blue" href="tel:09395695680">
+<a class="btn primary" href="tel:09395695680">
 تماس مستقیم
 </a>
 
-<a class="btn dark"
-href="https://instagram.com/danial.aliabadii">
+<a class="btn secondary" href="https://instagram.com/danial.aliabadii">
 اینستاگرام
 </a>
 
@@ -227,50 +230,70 @@ href="https://instagram.com/danial.aliabadii">
 </div>
 
 <div class="hero-image">
-<img src="IMG_1586.jpeg">
-</div>
-
-</div>
-
-</section>
-
-<section class="cards">
-
-<div class="card">
-<h3>آموزش کودکان</h3>
-<p>شروع اصولی شنا برای تمام سنین</p>
-</div>
-
-<div class="card">
-<h3>آموزش بزرگسالان</h3>
-<p>از مبتدی تا پیشرفته</p>
-</div>
-
-<div class="card">
-<h3>آمادگی مسابقات</h3>
-<p>برنامه حرفه‌ای برای قهرمانی</p>
-</div>
-
-<div class="card">
-<h3>تمرین خصوصی</h3>
-<p>کوچینگ اختصاصی و تخصصی</p>
-</div>
-
-</section>
-
-<section class="gallery">
 
 <img src="IMG_1591.jpeg">
-<img src="IMG_1592.jpeg">
-<img src="IMG_1586.jpeg">
+
+</div>
+
+</div>
 
 </section>
 
-<div class="footer">
+<section class="stats">
 
-دانیال علی آبادی © 2025
+<div class="card">
+<h3>+200</h3>
+<p>هنرجوی موفق</p>
+</div>
+
+<div class="card">
+<h3>12</h3>
+<p>سال تجربه</p>
+</div>
+
+<div class="card">
+<h3>+50</h3>
+<p>مقام استانی</p>
+</div>
+
+<div class="card">
+<h3>100%</h3>
+<p>رضایت هنرجویان</p>
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">
+گالری تصاویر
+</h2>
+
+<div class="gallery">
+
+<img src="IMG_1586.jpeg">
+<img src="IMG_1591.jpeg">
+<img src="IMG_1592.jpeg">
 
 </div>
+
+</section>
+
+<section class="footer">
+
+<h2>دانیال علی آبادی</h2>
+
+<br>
+
+<p>مربی تخصصی شنا در ساری</p>
+
+<br>
+
+<div class="phone">
+09395695680
+</div>
+
+</section>
 
 </body>
 </html>
