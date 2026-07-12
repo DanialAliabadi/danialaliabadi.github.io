@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,7 +21,7 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#020b18;
+background:#04111f;
 color:white;
 overflow-x:hidden;
 }
@@ -29,9 +31,9 @@ content:'';
 position:fixed;
 inset:0;
 background:
-radial-gradient(circle at 20% 20%,#00bfff22,transparent 30%),
-radial-gradient(circle at 80% 40%,#00ffff22,transparent 30%),
-radial-gradient(circle at 50% 80%,#0066ff22,transparent 30%);
+radial-gradient(circle at 20% 20%,rgba(0,191,255,.20),transparent 30%),
+radial-gradient(circle at 80% 30%,rgba(0,255,255,.15),transparent 30%),
+radial-gradient(circle at 50% 90%,rgba(0,120,255,.18),transparent 35%);
 pointer-events:none;
 z-index:-1;
 }
@@ -39,6 +41,7 @@ z-index:-1;
 header{
 position:fixed;
 top:0;
+left:0;
 width:100%;
 padding:20px 8%;
 display:flex;
@@ -46,31 +49,32 @@ justify-content:space-between;
 align-items:center;
 background:rgba(0,0,0,.45);
 backdrop-filter:blur(20px);
-z-index:999;
+z-index:1000;
 border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
 font-size:32px;
 font-weight:900;
-color:#36c8ff;
+color:#48d4ff;
+letter-spacing:2px;
 text-shadow:0 0 20px #00aaff;
 }
 
 nav{
 display:flex;
-gap:20px;
+gap:25px;
 }
 
 nav a{
-color:white;
 text-decoration:none;
+color:white;
 font-size:15px;
 transition:.3s;
 }
 
 nav a:hover{
-color:#36c8ff;
+color:#48d4ff;
 }
 
 .hero{
@@ -78,11 +82,11 @@ min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
+padding:120px 8%;
 gap:60px;
-padding:140px 8% 60px;
 background:
-linear-gradient(rgba(2,11,24,.82),rgba(2,11,24,.95)),
-url('IMG_1586.jpeg');
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
+url('IMG_1591.jpeg');
 background-size:cover;
 background-position:center;
 }
@@ -91,30 +95,35 @@ background-position:center;
 flex:1;
 }
 
-.hero-text h3{
-color:#36c8ff;
-font-size:24px;
-margin-bottom:15px;
+.badge{
+display:inline-block;
+padding:10px 20px;
+border-radius:50px;
+border:1px solid #00c8ff;
+color:#48d4ff;
+margin-bottom:20px;
+background:rgba(0,170,255,.10);
 }
 
 .hero-text h1{
-font-size:78px;
+font-size:90px;
 font-weight:900;
-line-height:1.1;
-text-shadow:0 0 25px #00aaff;
+line-height:1;
+margin-bottom:20px;
+text-shadow:0 0 35px #00aaff;
 }
 
 .hero-text p{
-margin-top:25px;
 font-size:20px;
 line-height:2;
-color:#d8e5f2;
+color:#d8e7f3;
+max-width:700px;
 }
 
 .buttons{
+margin-top:35px;
 display:flex;
 gap:15px;
-margin-top:35px;
 flex-wrap:wrap;
 }
 
@@ -122,14 +131,14 @@ flex-wrap:wrap;
 padding:16px 34px;
 border-radius:50px;
 text-decoration:none;
-font-size:18px;
+font-weight:700;
 transition:.4s;
 }
 
 .primary{
 background:#00aaff;
 color:white;
-box-shadow:0 0 30px #00aaff;
+box-shadow:0 0 25px #00aaff;
 }
 
 .primary:hover{
@@ -149,24 +158,43 @@ color:white;
 .hero-image{
 flex:1;
 text-align:center;
+position:relative;
+}
+
+.hero-image::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:#00aaff;
+filter:blur(180px);
+opacity:.20;
+z-index:-1;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
 }
 
 .hero-image img{
 width:100%;
-max-width:550px;
-border-radius:35px;
-border:2px solid rgba(0,200,255,.4);
+max-width:520px;
+border-radius:30px;
+border:2px solid rgba(0,200,255,.3);
 box-shadow:0 0 50px rgba(0,170,255,.5);
-animation:float 4s infinite ease-in-out;
+animation:float 5s infinite ease-in-out;
 }
 
 @keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-15px);
+}
 }
 
 .stats{
-padding:60px 8%;
+padding:80px 8%;
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px;
@@ -184,11 +212,11 @@ transition:.4s;
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 25px rgba(0,170,255,.4);
+box-shadow:0 0 30px rgba(0,170,255,.3);
 }
 
 .card h2{
-font-size:45px;
+font-size:48px;
 color:#00c8ff;
 margin-bottom:10px;
 }
@@ -198,10 +226,10 @@ padding:100px 8%;
 }
 
 .section-title{
-font-size:46px;
+font-size:50px;
 text-align:center;
-margin-bottom:45px;
-color:#36c8ff;
+margin-bottom:50px;
+color:#48d4ff;
 }
 
 .about{
@@ -213,25 +241,25 @@ align-items:center;
 
 .about img{
 width:100%;
-border-radius:30px;
+border-radius:25px;
 box-shadow:0 0 35px rgba(0,170,255,.4);
 }
 
 .about-text{
-font-size:18px;
+font-size:19px;
 line-height:2.2;
-color:#d8e5f2;
+color:#d8e7f3;
 }
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
 }
 
 .gallery img{
 width:100%;
-height:360px;
+height:400px;
 object-fit:cover;
 border-radius:25px;
 transition:.4s;
@@ -248,10 +276,10 @@ text-align:center;
 .contact a{
 display:inline-block;
 margin:10px;
-padding:16px 30px;
-border-radius:50px;
+padding:18px 30px;
 background:#00aaff;
 color:white;
+border-radius:50px;
 text-decoration:none;
 box-shadow:0 0 20px #00aaff;
 }
@@ -259,9 +287,8 @@ box-shadow:0 0 20px #00aaff;
 footer{
 padding:40px;
 text-align:center;
-color:#93a7ba;
 border-top:1px solid rgba(255,255,255,.08);
-margin-top:60px;
+color:#95a9bc;
 }
 
 @media(max-width:900px){
@@ -272,7 +299,7 @@ text-align:center;
 }
 
 .hero-text h1{
-font-size:50px;
+font-size:55px;
 }
 
 .stats{
@@ -290,11 +317,13 @@ display:none;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
+
 <div class="logo">DANIAL</div>
 
 <nav>
@@ -303,20 +332,25 @@ display:none;
 <a href="#gallery">گالری</a>
 <a href="#contact">تماس</a>
 </nav>
+
 </header>
 
 <section class="hero">
 
 <div class="hero-text">
 
-<h3>مربی حرفه‌ای شنا در ساری</h3>
+<div class="badge">
+🏆 مربی حرفه‌ای شنا در ساری
+</div>
 
-<h1>دانیال علی آبادی</h1>
+<h1>
+قهرمان بعدی
+می‌تواند تو باشی
+</h1>
 
 <p>
-آموزش شنا از سطح مبتدی تا قهرمانی،
-آمادگی مسابقات، برنامه‌های تخصصی،
-و آموزش حرفه‌ای برای تمامی سنین.
+آموزش تخصصی شنا از اولین ورود به آب تا آمادگی مسابقات حرفه‌ای.
+برنامه تمرینی اختصاصی، آموزش اصولی و پیشرفت مستمر برای تمامی سنین.
 </p>
 
 <div class="buttons">
@@ -325,8 +359,7 @@ display:none;
 تماس مستقیم
 </a>
 
-<a class="btn secondary"
-href="https://instagram.com/danial.aliabadii">
+<a class="btn secondary" href="https://instagram.com/danial.aliabadii">
 اینستاگرام
 </a>
 
@@ -335,10 +368,11 @@ href="https://instagram.com/danial.aliabadii">
 </div>
 
 <div class="hero-image">
+
 <img src="IMG_1592.jpeg">
+
 </div>
 
-</section>
 
 <section class="stats">
 
@@ -348,18 +382,18 @@ href="https://instagram.com/danial.aliabadii">
 </div>
 
 <div class="card">
-<h2>200+</h2>
-<p>هنرجوی موفق</p>
+<h2>300+</h2>
+<p>هنرجوی آموزش دیده</p>
 </div>
 
 <div class="card">
 <h2>50+</h2>
-<p>مدال و افتخار</p>
+<p>افتخارات ورزشی</p>
 </div>
 
 <div class="card">
 <h2>100%</h2>
-<p>رضایت هنرجویان</p>
+<p>تعهد به پیشرفت هنرجویان</p>
 </div>
 
 </section>
@@ -372,15 +406,55 @@ href="https://instagram.com/danial.aliabadii">
 
 <div class="about">
 
-<img src="IMG_1592.jpeg">
+<img src="IMG_1586.jpeg">
 
 <div class="about-text">
-من دانیال علی آبادی هستم.
-سال‌ها در حوزه آموزش شنا، آماده‌سازی مسابقات و
-پرورش شناگران فعالیت داشته‌ام.
 
-هدف من آموزش اصولی، علمی و حرفه‌ای شنا
-برای کودکان، نوجوانان و بزرگسالان است.
+<p>
+
+من دانیال علی آبادی هستم.
+
+سال‌ها در زمینه آموزش شنا، آماده‌سازی مسابقات و پرورش شناگران فعالیت داشته‌ام.
+
+هدف من فقط آموزش شنا نیست؛
+هدف من ساختن شناگرانی با اعتماد به نفس، تکنیک حرفه‌ای و آمادگی مسابقات است.
+
+در تمام سال‌های فعالیت خود تلاش کرده‌ام هنرجویان را از اولین ورود به آب تا سطح حرفه‌ای همراهی کنم.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+چرا من؟
+</h2>
+
+<div class="stats">
+
+<div class="card">
+<h2>🏊</h2>
+<p>آموزش اصولی شنا</p>
+</div>
+
+<div class="card">
+<h2>🏆</h2>
+<p>آمادگی مسابقات</p>
+</div>
+
+<div class="card">
+<h2>💪</h2>
+<p>برنامه اختصاصی</p>
+</div>
+
+<div class="card">
+<h2>⭐</h2>
+<p>پیگیری پیشرفت هنرجویان</p>
 </div>
 
 </div>
@@ -393,27 +467,13 @@ href="https://instagram.com/danial.aliabadii">
 افتخارات و دستاوردها
 </h2>
 
-<div class="stats">
+<div class="gallery">
 
-<div class="card">
-<h2>🏆</h2>
-<p>مقام‌های استانی</p>
-</div>
+<img src="IMG_1586.jpeg">
 
-<div class="card">
-<h2>🥇</h2>
-<p>قهرمانی مسابقات</p>
-</div>
+<img src="IMG_1591.jpeg">
 
-<div class="card">
-<h2>🎖️</h2>
-<p>مربیگری تخصصی</p>
-</div>
-
-<div class="card">
-<h2>⭐</h2>
-<p>تربیت شناگران حرفه‌ای</p>
-</div>
+<img src="IMG_1592.jpeg">
 
 </div>
 
@@ -428,7 +488,9 @@ href="https://instagram.com/danial.aliabadii">
 <div class="gallery">
 
 <img src="IMG_1586.jpeg">
+
 <img src="IMG_1591.jpeg">
+
 <img src="IMG_1592.jpeg">
 
 </div>
@@ -438,22 +500,59 @@ href="https://instagram.com/danial.aliabadii">
 <section class="section contact" id="contact">
 
 <h2 class="section-title">
-ارتباط با من
+اولین قدم را امروز بردار
 </h2>
+
+<p style="max-width:700px;margin:auto;line-height:2;color:#d8e7f3;">
+
+برای ثبت‌نام، مشاوره و هماهنگی کلاس‌ها
+از طریق شماره تماس یا اینستاگرام با من در ارتباط باشید.
+
+</p>
+
+<br><br>
 
 <a href="tel:09395695680">
 📞 09395695680
 </a>
 
 <a href="https://instagram.com/danial.aliabadii">
-📸 Instagram
+📸 danial.aliabadii
 </a>
 
 </section>
 
 <footer>
-© 2025 Danial Aliabadi Swimming Coach
+
+© 2025 DANIAL ALIABADI
+
 </footer>
+
+<script>
+
+document.querySelectorAll('.card').forEach(card=>{
+
+card.addEventListener('mousemove',(e)=>{
+
+const x=e.offsetX;
+const y=e.offsetY;
+
+card.style.background=
+`radial-gradient(circle at ${x}px ${y}px,
+rgba(0,170,255,.25),
+rgba(255,255,255,.05))`;
+
+});
+
+card.addEventListener('mouseleave',()=>{
+
+card.style.background='rgba(255,255,255,.05)';
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
