@@ -1,571 +1,880 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>دانیال علی آبادی | مربی حرفه‌ای شنا</title>
-
+<meta name="description" content="دانیال علی آبادی، مربی حرفه‌ای شنا در ساری | آموزش تخصصی شنا، آمادگی مسابقات، کلاس خصوصی و برنامه‌های اختصاصی." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Vazirmatn',sans-serif;
-scroll-behavior:smooth;
+:root{
+  --bg:#030c18;
+  --bg2:#071423;
+  --card:rgba(255,255,255,.06);
+  --line:rgba(255,255,255,.1);
+  --text:#eaf4ff;
+  --muted:#b9c9d8;
+  --cyan:#37d7ff;
+  --blue:#159dff;
+  --shadow:0 20px 60px rgba(0,0,0,.35);
+  --radius:28px;
 }
-
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-background:#030d18;
-color:white;
-overflow-x:hidden;
+  font-family:"Vazirmatn",sans-serif;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(55,215,255,.16), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgba(21,157,255,.13), transparent 28%),
+    radial-gradient(circle at 50% 90%, rgba(55,215,255,.08), transparent 32%),
+    linear-gradient(180deg, #020811 0%, var(--bg) 35%, #040e1b 100%);
+  color:var(--text);
+  overflow-x:hidden;
 }
-
 body::before{
-content:'';
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at 15% 20%,rgba(0,191,255,.20),transparent 30%),
-radial-gradient(circle at 85% 30%,rgba(0,255,255,.15),transparent 30%),
-radial-gradient(circle at 50% 90%,rgba(0,120,255,.20),transparent 40%);
-pointer-events:none;
-z-index:-1;
+  content:"";
+  position:fixed; inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(120deg, rgba(255,255,255,.03) 0 2px, transparent 2px 100%),
+    linear-gradient(30deg, rgba(255,255,255,.02) 0 1px, transparent 1px 100%);
+  background-size:120px 120px, 140px 140px;
+  opacity:.18;
+  mix-blend-mode:screen;
 }
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
 
-header{
-position:fixed;
-top:0;
-width:100%;
-padding:22px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,.35);
-backdrop-filter:blur(20px);
-z-index:1000;
+.container{width:min(1200px, calc(100% - 32px)); margin:0 auto;}
+.nav{
+  position:fixed;
+  top:16px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(1200px, calc(100% - 24px));
+  z-index:1000;
+  background:rgba(5,10,18,.44);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:999px;
+  box-shadow:var(--shadow);
 }
-
-.logo{
-font-size:34px;
-font-weight:900;
-letter-spacing:2px;
-color:#45d2ff;
-text-shadow:0 0 25px #00aaff;
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:14px 22px;
 }
-
-nav{
-display:flex;
-gap:25px;
+.brand{
+  display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.5px;
 }
-
-nav a{
-color:white;
-text-decoration:none;
-transition:.3s;
+.brand-mark{
+  width:38px;height:38px;border-radius:14px;
+  background:linear-gradient(135deg, var(--cyan), var(--blue));
+  box-shadow:0 0 30px rgba(55,215,255,.4);
+  display:grid;place-items:center;
+  color:#001220;font-size:18px;font-weight:900;
 }
+.brand-text{line-height:1}
+.brand-text small{display:block;color:var(--muted);font-weight:500;font-size:11px;margin-top:2px}
 
-nav a:hover{
-color:#45d2ff;
+.nav-links{
+  display:flex;align-items:center;gap:18px;
+}
+.nav-links a{
+  color:var(--text);
+  font-size:14px;
+  opacity:.9;
+  transition:.25s ease;
+}
+.nav-links a:hover{color:var(--cyan);opacity:1}
+
+.nav-cta{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:13px 20px;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-weight:800;
+  transition:.3s ease;
+  will-change:transform;
+  white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{
+  color:#00121d;
+  background:linear-gradient(135deg, #62e4ff, #22a8ff);
+  box-shadow:0 12px 34px rgba(34,168,255,.35);
+}
+.btn-secondary{
+  background:rgba(255,255,255,.04);
+  color:var(--text);
+  border-color:rgba(255,255,255,.12);
+}
+.icon-dot{
+  width:10px;height:10px;border-radius:50%;
+  background:#0cf; box-shadow:0 0 12px #0cf;
 }
 
 .hero{
+  min-height:100svh;
+  display:grid;
+  align-items:center;
+  padding:120px 0 60px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap:34px;
+  align-items:center;
+}
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 16px;
+  border-radius:999px;
+  background:rgba(55,215,255,.09);
+  border:1px solid rgba(55,215,255,.18);
+  color:#8eeeff;
+  font-weight:700;
+  font-size:14px;
+  margin-bottom:18px;
+  backdrop-filter:blur(10px);
+}
+.hero h1{
+  font-size:clamp(3rem, 7vw, 5.6rem);
+  line-height:.92;
+  letter-spacing:-1.5px;
+  margin-bottom:18px;
+  text-shadow:0 0 28px rgba(55,215,255,.18);
+}
+.hero h1 .accent{
+  background:linear-gradient(135deg, #7ff0ff 0%, #23abff 45%, #ffffff 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero p{
+  font-size:clamp(1.02rem, 2vw, 1.2rem);
+  line-height:2.15;
+  color:var(--muted);
+  max-width:620px;
+}
+.hero-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+.hero-badges{
+  display:flex;flex-wrap:wrap;gap:10px;
+  margin-top:24px;
+}
+.chip{
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  color:#dfeeff;
+  font-size:13px;
+  backdrop-filter:blur(10px);
+}
+.chip strong{color:#7fe8ff}
 
-min-height:100vh;
-
-background:
-linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),
-url('IMG_1591.jpeg');
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-padding:120px 8%;
-
-gap:60px;
-
+.hero-visual{
+  position:relative;
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero-orb{
+  position:absolute;
+  width:min(560px, 90vw);
+  height:min(560px, 90vw);
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, rgba(123,241,255,.42), rgba(123,241,255,.08) 28%, transparent 60%);
+  filter:blur(5px);
+  opacity:.9;
+  animation:floatOrb 7s ease-in-out infinite;
+}
+.hero-panel{
+  position:relative;
+  width:min(520px, 100%);
+  border-radius:34px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 26px 80px rgba(0,0,0,.45);
+  background:#08111d;
+  transform:translateY(8px);
+}
+.hero-panel img{
+  width:100%;
+  height:650px;
+  object-fit:cover;
+  object-position:center;
+  filter:saturate(1.15) contrast(1.05);
+}
+.hero-panel::after{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.2) 30%, rgba(0,0,0,.68) 100%),
+    radial-gradient(circle at 50% 12%, rgba(55,215,255,.22), transparent 35%);
+}
+.hero-name-card{
+  position:absolute;
+  right:18px;
+  left:18px;
+  bottom:18px;
+  z-index:2;
+  padding:18px 18px 16px;
+  border-radius:24px;
+  background:rgba(4,10,18,.42);
+  border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(18px);
+}
+.hero-name-card h3{
+  font-size:22px;
+  margin-bottom:4px;
+}
+.hero-name-card p{
+  font-size:14px;
+  color:#cfe5f6;
+  line-height:1.9;
+}
+.hero-floating{
+  position:absolute;
+  left:-16px;
+  top:38px;
+  width:170px;
+  padding:16px;
+  border-radius:22px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  backdrop-filter:blur(14px);
+  box-shadow:var(--shadow);
+}
+.hero-floating b{
+  display:block;
+  font-size:30px;
+  color:#80efff;
+  margin-bottom:4px;
+}
+.hero-floating span{
+  color:#c5d8e8;
+  font-size:13px;
+  line-height:1.7;
 }
 
-.hero-text{
-flex:1;
+.stats{
+  padding:10px 0 20px;
+  margin-top:-8px;
 }
-
-.badge{
-
-display:inline-block;
-
-padding:10px 22px;
-
-border-radius:50px;
-
-background:rgba(0,170,255,.12);
-
-border:1px solid rgba(0,200,255,.4);
-
-color:#45d2ff;
-
-margin-bottom:25px;
-
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
 }
-
-.hero-text h1{
-
-font-size:92px;
-
-font-weight:900;
-
-line-height:1;
-
-text-shadow:0 0 35px #00aaff;
-
-margin-bottom:20px;
-
+.stat-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:24px;
+  padding:26px 22px;
+  text-align:center;
+  backdrop-filter:blur(16px);
+  box-shadow:var(--shadow);
 }
-
-.hero-text p{
-
-font-size:22px;
-
-line-height:2;
-
-color:#d9e8f5;
-
-max-width:700px;
-
+.stat-card .num{
+  font-size:clamp(2rem, 4vw, 3rem);
+  font-weight:900;
+  color:#75ecff;
+  line-height:1;
+  margin-bottom:8px;
 }
-
-.buttons{
-
-display:flex;
-
-gap:15px;
-
-margin-top:35px;
-
-flex-wrap:wrap;
-
-}
-
-.btn{
-
-padding:17px 34px;
-
-border-radius:50px;
-
-text-decoration:none;
-
-font-weight:700;
-
-transition:.4s;
-
-}
-
-.primary{
-
-background:#00aaff;
-
-color:white;
-
-box-shadow:0 0 25px #00aaff;
-
-}
-
-.primary:hover{
-
-transform:translateY(-5px);
-
-}
-
-.secondary{
-
-border:2px solid #00aaff;
-
-color:#00aaff;
-
-}
-
-.secondary:hover{
-
-background:#00aaff;
-
-color:white;
-
-}
-
-.hero-image{
-
-flex:1;
-
-display:flex;
-
-justify-content:center;
-
-position:relative;
-
-}
-
-.hero-image::before{
-
-content:'';
-
-position:absolute;
-
-width:500px;
-
-height:500px;
-
-background:#00aaff;
-
-filter:blur(180px);
-
-opacity:.25;
-
-z-index:-1;
-
-}
-
-.hero-image img{
-
-width:100%;
-
-max-width:560px;
-
-border-radius:35px;
-
-border:2px solid rgba(0,200,255,.3);
-
-box-shadow:0 0 60px rgba(0,170,255,.5);
-
+.stat-card .label{
+  color:var(--muted);
+  line-height:1.8;
+  font-size:14px;
 }
 
 .section{
-
-padding:110px 8%;
-
+  padding:92px 0;
 }
-
+.section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:28px;
+}
 .section-title{
-
-font-size:55px;
-
-text-align:center;
-
-margin-bottom:50px;
-
-color:#45d2ff;
-
+  font-size:clamp(2rem, 4vw, 3.2rem);
+  line-height:1.1;
+  letter-spacing:-.5px;
+}
+.section-sub{
+  max-width:560px;
+  color:var(--muted);
+  line-height:2;
+  font-size:15px;
 }
 
-@media(max-width:900px){
-
-.hero{
-
-flex-direction:column;
-
-text-align:center;
-
+.grid-2{
+  display:grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap:24px;
+  align-items:center;
+}
+.portrait{
+  position:relative;
+  border-radius:30px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:var(--shadow);
+}
+.portrait img{
+  width:100%;
+  height:520px;
+  object-fit:cover;
+}
+.portrait::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 15%, rgba(0,0,0,.35) 100%);
+}
+.glass{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(16px);
+}
+.about-box{
+  padding:30px;
+}
+.about-box p{
+  color:var(--muted);
+  line-height:2.2;
+  font-size:16px;
+}
+.feature-list{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:22px;
+}
+.feature{
+  padding:18px;
+  border-radius:20px;
+  background:rgba(7,17,29,.5);
+  border:1px solid rgba(255,255,255,.06);
+}
+.feature b{
+  display:block;
+  color:#8ff0ff;
+  margin-bottom:6px;
+  font-size:16px;
+}
+.feature span{
+  color:var(--muted);
+  line-height:1.85;
+  font-size:14px;
 }
 
-.hero-text h1{
-
-font-size:58px;
-
+.services{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.service{
+  padding:24px;
+  min-height:180px;
+}
+.service .emoji{
+  font-size:28px;
+  margin-bottom:14px;
+}
+.service h3{
+  font-size:18px;
+  margin-bottom:8px;
+}
+.service p{
+  color:var(--muted);
+  line-height:1.95;
+  font-size:14px;
 }
 
-nav{
-
-display:none;
-
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+.gallery figure{
+  position:relative;
+  border-radius:26px;
+  overflow:hidden;
+  min-height:360px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(255,255,255,.08);
+}
+.gallery img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .55s ease, filter .55s ease;
+}
+.gallery figure:hover img{
+  transform:scale(1.06);
+  filter:saturate(1.08);
+}
+.gallery figcaption{
+  position:absolute;
+  right:0;left:0;bottom:0;
+  padding:18px;
+  background:linear-gradient(180deg, transparent, rgba(0,0,0,.78));
+  color:#fff;
+  font-weight:700;
+  letter-spacing:.2px;
 }
 
+.quote{
+  padding:28px;
+}
+.quote p{
+  font-size:18px;
+  line-height:2.2;
+  color:#dceafb;
+}
+.quote .author{
+  margin-top:16px;
+  color:#83eeff;
+  font-weight:700;
 }
 
+.cta{
+  padding:0 0 100px;
+}
+.cta-panel{
+  padding:34px;
+  border-radius:34px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(55,215,255,.18), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(21,157,255,.14), transparent 28%),
+    rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.09);
+  box-shadow:var(--shadow);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.cta-panel h2{
+  font-size:clamp(1.8rem, 4vw, 3rem);
+  line-height:1.15;
+  margin-bottom:10px;
+}
+.cta-panel p{
+  color:var(--muted);
+  line-height:2;
+  max-width:720px;
+}
+.cta-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.footer{
+  padding:26px 0 46px;
+  color:#98adbe;
+  border-top:1px solid rgba(255,255,255,.08);
+  text-align:center;
+  line-height:1.9;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@keyframes floatOrb{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-18px) scale(1.03)}
+}
+
+@media (max-width: 1100px){
+  .hero-grid,
+  .grid-2{
+    grid-template-columns:1fr;
+  }
+  .hero{
+    padding-top:140px;
+  }
+  .hero-visual{
+    min-height:auto;
+  }
+  .hero-panel img{
+    height:560px;
+  }
+  .stats-grid,
+  .services,
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .cta-panel{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .cta-actions{
+    justify-content:flex-start;
+  }
+}
+
+@media (max-width: 760px){
+  .nav{
+    top:10px;
+    border-radius:22px;
+  }
+  .nav-inner{
+    padding:14px 16px;
+  }
+  .nav-links{
+    display:none;
+  }
+  .nav-cta .btn{
+    padding:11px 15px;
+    font-size:13px;
+  }
+  .hero{
+    padding:118px 0 40px;
+  }
+  .hero h1{
+    font-size:3rem;
+  }
+  .hero-panel img{
+    height:470px;
+  }
+  .hero-floating{
+    display:none;
+  }
+  .stats-grid,
+  .services,
+  .gallery,
+  .feature-list{
+    grid-template-columns:1fr;
+  }
+  .section{
+    padding:72px 0;
+  }
+  .section-head{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .portrait img{
+    height:420px;
+  }
+}
 </style>
-
 </head>
-
 <body>
 
-<header>
+<header class="nav">
+  <div class="nav-inner container">
+    <a class="brand" href="#top">
+      <span class="brand-mark">D</span>
+      <span class="brand-text">
+        DANIAL ALIABADI
+        <small>Professional Swim Coach</small>
+      </span>
+    </a>
 
-<div class="logo">
-DANIAL
-</div>
+    <nav class="nav-links">
+      <a href="#about">درباره من</a>
+      <a href="#services">خدمات</a>
+      <a href="#awards">افتخارات</a>
+      <a href="#gallery">گالری</a>
+      <a href="#contact">تماس</a>
+    </nav>
 
-<nav>
-
-<a href="#about">درباره من</a>
-
-<a href="#awards">افتخارات</a>
-
-<a href="#gallery">گالری</a>
-
-<a href="#contact">تماس</a>
-
-</nav>
-
+    <div class="nav-cta">
+      <a class="btn btn-secondary" href="https://instagram.com/danial.aliabadii" target="_blank" rel="noopener">اینستاگرام</a>
+      <a class="btn btn-primary" href="tel:09395695680"><span class="icon-dot"></span> تماس مستقیم</a>
+    </div>
+  </div>
 </header>
 
-<section class="hero">
-
-<div class="hero-text">
-
-<div class="badge">
-🏆 مربی حرفه‌ای شنا در ساری
-</div>
-
-<h1>
-
-دانیال
-علی آبادی
-
-</h1>
-
-<p>
-
-آموزش تخصصی شنا از سطح مبتدی تا قهرمانی،
-آمادگی مسابقات، آموزش کودکان و بزرگسالان
-و برنامه‌های اختصاصی برای پیشرفت حرفه‌ای.
-
-</p>
-
-<div class="buttons">
-
-<a href="tel:09395695680" class="btn primary">
-
-تماس مستقیم
-
-</a>
-
-<a href="https://instagram.com/danial.aliabadii" class="btn secondary">
-
-اینستاگرام
-
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<img src="IMG_1592.jpeg">
-
-</div>
-
-</section>
-  
-<section class="section" id="about">
-
-<h2 class="section-title">
-درباره من
-</h2>
-
-<div style="
-max-width:1100px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-">
-
-<img src="IMG_1592.jpeg" style="
-width:100%;
-border-radius:30px;
-box-shadow:0 0 50px rgba(0,170,255,.4);
-">
-
-<div style="
-font-size:20px;
-line-height:2.2;
-color:#d8e7f3;
-">
-
-من دانیال علی آبادی هستم.
-
-سال‌ها در زمینه آموزش شنا، آماده‌سازی مسابقات و پرورش شناگران فعالیت داشته‌ام.
-
-هدف من فقط آموزش شنا نیست؛
-
-هدف من ساختن شناگرانی با اعتماد به نفس، تکنیک حرفه‌ای و آمادگی مسابقات است.
-
-در تمام سال‌های فعالیت خود تلاش کرده‌ام هنرجویان را از اولین ورود به آب تا سطح حرفه‌ای همراهی کنم.
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="awards">
-
-<h2 class="section-title">
-افتخارات و دستاوردها
-</h2>
-
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-">
-
-<div style="
-background:rgba(255,255,255,.05);
-padding:35px;
-border-radius:25px;
-text-align:center;
-backdrop-filter:blur(15px);
-">
-<h1 style="color:#00c8ff;">12+</h1>
-<p>سال تجربه</p>
-</div>
-
-<div style="
-background:rgba(255,255,255,.05);
-padding:35px;
-border-radius:25px;
-text-align:center;
-backdrop-filter:blur(15px);
-">
-<h1 style="color:#00c8ff;">300+</h1>
-<p>هنرجوی آموزش دیده</p>
-</div>
-
-<div style="
-background:rgba(255,255,255,.05);
-padding:35px;
-border-radius:25px;
-text-align:center;
-backdrop-filter:blur(15px);
-">
-<h1 style="color:#00c8ff;">50+</h1>
-<p>افتخارات ورزشی</p>
-</div>
-
-<div style="
-background:rgba(255,255,255,.05);
-padding:35px;
-border-radius:25px;
-text-align:center;
-backdrop-filter:blur(15px);
-">
-<h1 style="color:#00c8ff;">100%</h1>
-<p>تعهد به پیشرفت هنرجویان</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="gallery">
-
-<h2 class="section-title">
-گالری تصاویر
-</h2>
-
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-">
-
-<img src="IMG_1586.jpeg" style="
-width:100%;
-height:420px;
-object-fit:cover;
-border-radius:25px;
-">
-
-<img src="IMG_1591.jpeg" style="
-width:100%;
-height:420px;
-object-fit:cover;
-border-radius:25px;
-">
-
-<img src="IMG_1592.jpeg" style="
-width:100%;
-height:420px;
-object-fit:cover;
-border-radius:25px;
-">
-
-</div>
-
-</section>
-
-<section class="section" id="contact">
-
-<h2 class="section-title">
-ارتباط با من
-</h2>
-
-<div style="
-text-align:center;
-">
-
-<p style="
-font-size:22px;
-line-height:2;
-margin-bottom:30px;
-">
-
-برای هماهنگی کلاس‌ها و مشاوره آموزشی
-با من در ارتباط باشید.
-
-</p>
-
-<a href="tel:09395695680"
-style="
-display:inline-block;
-padding:18px 35px;
-background:#00aaff;
-color:white;
-text-decoration:none;
-border-radius:50px;
-margin:10px;
-box-shadow:0 0 25px #00aaff;
-">
-📞 تماس مستقیم
-</a>
-
-<a href="https://instagram.com/danial.aliabadii"
-style="
-display:inline-block;
-padding:18px 35px;
-border:2px solid #00aaff;
-color:#00aaff;
-text-decoration:none;
-border-radius:50px;
-margin:10px;
-">
-📸 danial.aliabadii
-</a>
-
-</div>
-
-</section>
-
-<footer style="
-padding:50px;
-text-align:center;
-border-top:1px solid rgba(255,255,255,.08);
-color:#9fb3c7;
-">
-
-© 2025 DANIAL ALIABADI
-
-</footer>
-
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <div class="kicker">🏆 مربی حرفه‌ای شنا در ساری | مازندران</div>
+        <h1><span class="accent">قهرمان بعدی</span><br>می‌تواند تو باشی</h1>
+        <p>
+          آموزش تخصصی شنا از اولین ورود به آب تا آمادگی مسابقات حرفه‌ای.
+          برنامه اختصاصی، اصلاح تکنیک، افزایش اعتمادبه‌نفس و پرورش شناگران آماده‌ی رقابت.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:09395695680">رزرو جلسه تمرینی</a>
+          <a class="btn btn-secondary" href="https://instagram.com/danial.aliabadii" target="_blank" rel="noopener">مشاهده اینستاگرام</a>
+        </div>
+
+        <div class="hero-badges">
+          <span class="chip"><strong>300+</strong> هنرجوی آموزش‌دیده</span>
+          <span class="chip"><strong>12+</strong> سال تجربه</span>
+          <span class="chip"><strong>50+</strong> افتخار ورزشی</span>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="hero-orb"></div>
+        <div class="hero-panel">
+          <img src="IMG_1591.jpeg" alt="دانیال علی آبادی داخل استخر">
+          <div class="hero-name-card">
+            <h3>دانیال علی آبادی</h3>
+            <p>
+              مربی تخصصی شنا | آموزش کودکان، نوجوانان و بزرگسالان
+              <br>تمرکز بر تکنیک، سرعت، استقامت و آمادگی مسابقات
+            </p>
+          </div>
+        </div>
+        <div class="hero-floating glass">
+          <b>100%</b>
+          <span>تعهد به پیشرفت هنرجویان و آموزش اصولی</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat-card reveal"><div class="num" data-count="12">0</div><div class="label">سال تجربه حرفه‌ای</div></div>
+      <div class="stat-card reveal"><div class="num" data-count="300">0</div><div class="label">هنرجوی آموزش‌دیده</div></div>
+      <div class="stat-card reveal"><div class="num" data-count="50">0</div><div class="label">موفقیت و افتخار</div></div>
+      <div class="stat-card reveal"><div class="num" data-count="100">0</div><div class="label">درصد تعهد به پیشرفت</div></div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title reveal">درباره من</div>
+        <div class="section-sub reveal">
+          یک معرفی کوتاه، شفاف و حرفه‌ای که در همان نگاه اول حس اعتماد و تخصص را منتقل می‌کند.
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="portrait reveal">
+          <img src="IMG_1592.jpeg" alt="دانیال علی آبادی">
+        </div>
+
+        <div class="glass about-box reveal">
+          <p>
+            من دانیال علی آبادی هستم؛ مربی شنا در ساری با تمرکز بر آموزش اصولی، دقیق و نتیجه‌محور.
+            هدف من فقط آموزش حرکت در آب نیست؛ هدف من ساختن شناگرانی با تکنیک حرفه‌ای، اعتمادبه‌نفس بالا و آمادگی مسابقات است.
+            در طول سال‌های فعالیت خود تلاش کرده‌ام هنرجویان را از سطح مقدماتی تا سطح حرفه‌ای همراهی کنم و برای هر نفر برنامه‌ای اختصاصی طراحی کنم.
+          </p>
+
+          <div class="feature-list">
+            <div class="feature">
+              <b>آموزش پایه تا پیشرفته</b>
+              <span>از اولین ورود به آب تا مهارت‌های کامل و حرفه‌ای</span>
+            </div>
+            <div class="feature">
+              <b>برنامه اختصاصی</b>
+              <span>متناسب با سن، سطح و هدف هر هنرجو</span>
+            </div>
+            <div class="feature">
+              <b>آمادگی مسابقات</b>
+              <span>تکنیک، سرعت، استقامت و تمرکز رقابتی</span>
+            </div>
+            <div class="feature">
+              <b>پیگیری مستمر</b>
+              <span>بررسی پیشرفت و اصلاح دقیق در هر مرحله</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title reveal">خدمات آموزشی</div>
+        <div class="section-sub reveal">
+          خدماتی که برای ساختن یک صفحه حرفه‌ای و فروش‌محور لازم است، نه فقط یک رزومه ساده.
+        </div>
+      </div>
+
+      <div class="services">
+        <div class="service glass reveal">
+          <div class="emoji">🏊</div>
+          <h3>آموزش شنا کودکان</h3>
+          <p>آموزش امن، اصولی و شاد برای ایجاد علاقه و مهارت از همان ابتدای مسیر.</p>
+        </div>
+        <div class="service glass reveal">
+          <div class="emoji">🏅</div>
+          <h3>آموزش بزرگسالان</h3>
+          <p>رفع ترس، اصلاح تکنیک و پیشرفت گام‌به‌گام برای تمام سنین.</p>
+        </div>
+        <div class="service glass reveal">
+          <div class="emoji">⏱️</div>
+          <h3>آمادگی مسابقات</h3>
+          <p>برنامه هدفمند برای افزایش سرعت، استقامت و عملکرد رقابتی.</p>
+        </div>
+        <div class="service glass reveal">
+          <div class="emoji">💪</div>
+          <h3>برنامه اختصاصی</h3>
+          <p>طراحی تمرین متناسب با سطح، نیاز و هدف هر هنرجو.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="awards">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title reveal">افتخارات و دستاوردها</div>
+        <div class="section-sub reveal">
+          این بخش می‌تواند بعداً با مدال‌ها، مقام‌ها و تصاویر واقعی شاگردان تکمیل شود.
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure class="reveal">
+          <img src="IMG_1586.jpeg" alt="افتخار و تصویر 1">
+          <figcaption>تلاش، نظم و پیشرفت</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="IMG_1591.jpeg" alt="افتخار و تصویر 2">
+          <figcaption>آمادگی در مسیر قهرمانی</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="IMG_1592.jpeg" alt="افتخار و تصویر 3">
+          <figcaption>مربیگری با هویت شخصی</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title reveal">گالری تصاویر</div>
+        <div class="section-sub reveal">
+          عکس‌هایی که برند شخصی تو را می‌سازند؛ هر کدام در جای درست و با اندازه‌ی مناسب.
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure class="reveal">
+          <img src="IMG_1591.jpeg" alt="داخل استخر">
+          <figcaption>عکس اصلی هدر | داخل استخر</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="IMG_1592.jpeg" alt="عکس پرتره">
+          <figcaption>پرتره حرفه‌ای</figcaption>
+        </figure>
+        <figure class="reveal">
+          <img src="IMG_1586.jpeg" alt="عکس باشگاه">
+          <figcaption>تمرین و آمادگی بدنی</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-panel reveal">
+        <div>
+          <h2>اولین قدم را امروز بردار</h2>
+          <p>
+            برای ثبت‌نام، مشاوره و هماهنگی کلاس‌ها با من در ارتباط باش.
+            اگر بخشی از سایت را بعداً بخواهی عوض کنی، همین ساختار آماده‌ی ارتقاست.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="tel:09395695680">📞 09395695680</a>
+          <a class="btn btn-secondary" href="https://instagram.com/danial.aliabadii" target="_blank" rel="noopener">📸 danial.aliabadii</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div>© 2025 Danial Aliabadi Swimming Coach</div>
+      <div>ساری، مازندران | آموزش تخصصی شنا</div>
+    </div>
+  </footer>
+</main>
+
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('show');
+  });
+}, { threshold: 0.12 });
+
+revealEls.forEach(el => observer.observe(el));
+
+const counters = document.querySelectorAll('[data-count]');
+let countersDone = false;
+
+function animateCounters(){
+  if (countersDone) return;
+  countersDone = true;
+
+  counters.forEach(counter => {
+    const target = parseInt(counter.dataset.count, 10);
+    let current = 0;
+    const step = Math.max(1, Math.ceil(target / 70));
+
+    const tick = () => {
+      current += step;
+      if (current >= target) {
+        counter.textContent = target + (target === 100 ? '%' : '+');
+        return;
+      }
+      counter.textContent = current + (target === 100 ? '%' : '+');
+      requestAnimationFrame(tick);
+    };
+
+    tick();
+  });
+}
+
+const statsSection = document.querySelector('.stats');
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) animateCounters();
+  });
+}, { threshold: 0.35 });
+
+if (statsSection) statsObserver.observe(statsSection);
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
 </body>
 </html>
